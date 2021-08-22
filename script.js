@@ -17,7 +17,7 @@ btnDom.innerHTML = "Random Image";
 document.body.appendChild(btnDom);
 btnDom.addEventListener("click", function () {
     const imgDom = document.createElement("img");
-    document.body.innerHTML = ''
+    document.body.innerHTML = "";
     document.body.appendChild(btnDom);
     imgDom.src = "https://picsum.photos/620/400";
     document.body.appendChild(imgDom);
@@ -34,14 +34,14 @@ const fetchAPI = async () => {
 fetchAPI().then(users => {
     // console.log(users);
     document.body.appendChild(document.createElement("h1"))
-    const list_title = document.querySelector("h1")
+    const list_title = document.querySelector("h1");
     list_title.innerHTML = "Users first names: ";
 
     const users_names = users.data.filter(user => user.id < 4)
     users_names.forEach(item => {
         const li_list = document.createElement("li")
-        document.body.appendChild(li_list);
         li_list.innerHTML = item.first_name;
+        document.body.appendChild(li_list);
     });
 });
 
